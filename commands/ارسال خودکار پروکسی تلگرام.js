@@ -9,4 +9,3 @@
   aliases: 
 CMD*/
 
-Bot.runCommand("آرمین اسکندری");

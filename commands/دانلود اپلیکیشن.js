@@ -63,7 +63,7 @@ show_alert: false
 let UserID = data.user.telegramid;
 
 let Buttons = [
-[{title: "🔌تلگرام اصلی", url: "https://play.google.com/store/apps/details?id=org.telegram.messenger" },{title: "🔌تلگرام پلاس", url: "https://play.google.com/store/apps/details?id=org.telegram.plus" }],
+[{title: "🔌تلگرام مسنجر", command: "تلگرام مسنجر" },{title: "🔌پلاس مسنجر", command: "پلاس مسنجر" },{title: "🔌گراف مسنجر", command: "گراف مسنجر" }],
 [{title: "🏠بازگشت به منوی اصلی", command: "داشبورد حساب کاربری" }],
 ];
 

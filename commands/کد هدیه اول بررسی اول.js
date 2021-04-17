@@ -17,11 +17,12 @@ var Sex = User.getProperty("Sex");
 
 var FullName = User.getProperty("FullName");
 
-function canRun(){
-var last_run_at = User.getProperty("last_run_at_Gift_Code");
-if(!last_run_at){ return true }
+var Gift_Code = User.getProperty("Gift_Code");
 
-var minutes = (Date.now() - last_run_at) /2000;
+function canRun(){
+if(!Gift_Code){ return true }
+
+var minutes = (Date.now() - Gift_Code) /2000;
 var minutes_in_day = 2000 * 2000
 var next = minutes_in_day - minutes
 var wait_hours = Math.floor(next / 2000)
@@ -42,7 +43,7 @@ return true;
 }
 
 if(!canRun()){ return }
-User.setProperty("last_run_at_Gift_Code", Date.now(), "integer");
+User.setProperty("Gift_Code", Date.now(), "integer");
 
 if(request.data){
 var message_id = request.message.message_id
@@ -63,11 +64,11 @@ show_alert: false
 let UserID = data.user.telegramid;
 
 let Buttons = [
-{title: "🔙بازگشت به منوی قبل", command: "اعتبار حساب کاربری" },
+{title: "🔙بازگشت به منوی قبل", command: "اعتبار رایگان" },
 {title: "🏠بازگشت به منوی اصلی", command: "داشبورد حساب کاربری" },
 ];
 
 Bot.runCommand("تاریخ و زمان");
 Bot.sendInlineKeyboard(Buttons, "<Sex> [<FullName>](tg://user?id=" + UserID + ") به بخش کد هدیه خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی زیر کلیک کنید.");
 
-Bot.runCommand("کد هدیه اول بررسس دوم");
+Bot.runCommand("کد هدیه اول بررسی دوم");

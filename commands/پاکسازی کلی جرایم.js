@@ -64,13 +64,13 @@ let Crimes_UserID = User.getProperty("Crimes_UserID");
 
 let Crimes_FullName = User.getProperty("Crimes_FullName");
 
-let Buttons = [
+let Buttons1 = [
 {title: "🔙بازگشت به منوی قبل", command: "بخش جرایم" },
 {title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" },
 ];
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons, "❌مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") بنا به درخواست شما جرایم تمامی کاربران با موفقیت حذف گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
+Bot.sendInlineKeyboard(Buttons1, "❌مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") بنا به درخواست شما جرایم تمامی کاربران با موفقیت حذف گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
 
 User.setProperty("Crimes_UserID", "", false);
 

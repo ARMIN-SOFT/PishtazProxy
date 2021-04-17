@@ -66,11 +66,12 @@ function Decimal(Money){
 return Money.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
-Bot.sendMessage("🎁کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") شما ۲،۰۰۰ تومان اعتبار بدلیل عضویت شما به ربات دریافت نمودید.\n➖➖➖➖➖➖➖➖➖➖\n🎎همچنین شما از طریق لینک معرف [" + refUser.first_name + "](tg://user?id=" + refUser.telegramid + ") عضویت خود را انجام دادید.\n\n<DateTime>");
+Money.add(400);
+Bot.sendMessage("🎁کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") شما ۴۰۰ تومان اعتبار بدلیل عضویت شما به ربات دریافت نمودید.\n➖➖➖➖➖➖➖➖➖➖\n🎎همچنین شما از طریق لینک معرف [" + refUser.first_name + "](tg://user?id=" + refUser.telegramid + ") عضویت خود را انجام دادید.\n\n<DateTime>");
 
-Money.add(4000);
+Money.add(600);
 Bot.runCommand("تاریخ و زمان");
-Bot.sendMessageToChatWithId(refUser.chatId, "🌹کاربر گرامی [" + refUser.first_name + "](tg://user?id=" + refUser.telegramid + ") تبریک شما ۴،۰۰۰ هزار تومان اعتبار بابت عضویت کاربر [" + FirstName + "](tg://user?id=" + UserID + ") به ربات دریافت نمودید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🌏ارز کنونی:🇮🇷ایران - تومان\n💳اعتبار کنونی:*" + (Decimal(Money.value())) + "* " + (Currency(Money.value())) + " ");
+Bot.sendMessageToChatWithId(refUser.chatId, "🌹کاربر گرامی [" + refUser.first_name + "](tg://user?id=" + refUser.telegramid + ") تبریک شما ۶۰۰ تومان اعتبار بابت عضویت کاربر [" + FirstName + "](tg://user?id=" + UserID + ") به ربات دریافت نمودید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🌏ارز کنونی:🇮🇷ایران - تومان\n💳اعتبار کنونی:*" + (Decimal(Money.value())) + "* " + (Currency(Money.value())) + " ");
 }
 
 Bot.runCommand("تاریخ و زمان");
@@ -86,9 +87,44 @@ onAlreadyAttracted: doAlreadyAttracted
 
 Libs.ReferralLib.currentUser.track(trackOptions);
 
-let Buttons = [
-[{title: "⚡️شروع ساده", command: "شروع ساده" }, {title: "⚡️شروع پیشرفته", command: "شروع پیشرفته" }],
-];
+if(request.data){
+var message_id = request.message.message_id
+var chat_id = request.message.chat.id
+
+Api.deleteMessage({
+chat_id :  chat_id,
+message_id : message_id
+})
+}
+
+let Question1 = Libs.Random.randomInt(10,100);
+
+let Question2 = Libs.Random.randomInt(10,100);
+
+let Answer = Question1+Question2;
+
+User.setProperty('Answer',Answer,'string')
+
+var Button1 = Libs.Random.randomInt(10,100);
+var Button2 = Libs.Random.randomInt(10,100);
+var Button3 = Libs.Random.randomInt(10,100);
+var Button4 = Libs.Random.randomInt(10,100);
+var Button5 = Libs.Random.randomInt(10,100);
+var Button6 = Libs.Random.randomInt(10,100);
+var Button7 = Libs.Random.randomInt(10,100);
+var Button8 = Question1+Question2;
+var Button9 = Libs.Random.randomInt(10,100);
+var Button10 = Libs.Random.randomInt(10,100);
+var Button11 = Libs.Random.randomInt(10,100);
+var Button12 = Libs.Random.randomInt(10,100);
+
+var Buttons = [
+[{title:Button1, command:'Answer '+Button1}, {title:Button2, command:'Answer '+Button2}, {title:Button3, command:'Answer '+Button3}],
+[{title:Button4, command:'Answer '+Button4}, {title:Button5, command:'Answer '+Button5}, {title:Button6, command:'Answer '+Button6}],
+[{title:Button7, command:'Answer '+Button7}, {title:Button8, command:'Answer '+Button8}, {title:Button9, command:'Answer '+Button9}],
+[{title:Button10, command:'Answer '+Button10}, {title:Button11, command:'Answer '+Button11}, {title:Button12, command:'Answer '+Button12}],
+[{title:'🔄تغیر پرسش امنیتی', command:'/start'}],
+]
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons, "👌کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") نوع شروع ربات را انتخاب کنید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🚨دستورات:شروع ساده\n📚توضیحات:ربات بصورت ساده شروع می شود\n\n🚨دستورات:شروع پیشرفته\n📚توضیحات:ربات تمامی تصاویر پروفایل شما را دریافت می کند\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
+Bot.sendInlineKeyboard(Buttons, "❓کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") قبل از استفاده از خدمات ربات پرسش امنیتی زیر را جواب دهید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n📟پرسش امنیتی:\n*" + Question1 + " + " + Question2 + "= ?*\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");

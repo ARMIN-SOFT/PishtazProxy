@@ -227,8 +227,71 @@ var Days = A_Date + 21;
 break;
 }
 
-Full.setHours(Full.getHours(Full.setMinutes(Full.getMinutes()-30))+4.30);
+function gregorian_to_jalali(gy, gm, gd) {
+var g_d_m, jy, jm, jd, gy2, days;
+var g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+var gy2 = (gm > 2) ? (gy + 1) : gy;
+var days = 355666 + (365 * gy) + parseInt((gy2 + 3) / 4) - parseInt((gy2 + 99) / 100) + parseInt((gy2 + 399) / 400) + gd + g_d_m[gm - 1];
+ jy = -1595 + (33 * parseInt(days / 12053));
+days %= 12053;
+jy += 4 * parseInt(days / 1461);
+days %= 1461;
+if (days > 365) {
+jy += parseInt((days - 1) / 365);
+var days = (days - 1) % 365;
+}
+
+if (days < 186) {
+var jm = 1 + parseInt(days / 31);
+var jd = 1 + (days % 31);
+}
+
+else {
+var jm = 7 + parseInt((days - 186) / 30);
+var jd = 1 + ((days - 186) % 30);
+}
+
+return [jy, jm, jd];
+}
+
+function jalali_to_gregorian(jy, jm, jd) {
+var sal_a, gy, gm, gd, days;
+jy += 1595;
+var days = -355668 + (365 * jy) + (parseInt(jy / 33) * 8) + parseInt(((jy % 33) + 3) / 4) + jd + ((jm < 7) ? (jm - 1) * 31 : ((jm - 7) * 30) + 186);
+var gy = 400 * parseInt(days / 146097);
+days %= 146097;
+if (days > 36524) {
+gy += 100 * parseInt(--days / 36524);
+days %= 36524;
+if (days >= 365) days++;
+}
+
+gy += 4 * parseInt(days / 1461);
+days %= 1461;
+if (days > 365) {
+gy += parseInt((days - 1) / 365);
+var days = (days - 1) % 365;
+}
+
+var gd = days + 1;
+var sal_a = [0, 31, ((gy % 4 === 0 && gy % 100 !== 0) || (gy % 400 === 0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+for (gm = 0; gm < 13 && gd > sal_a[gm]; gm++) gd -= sal_a[gm];
+return [gy, gm, gd];
+}
+
+var d=new Date();
+var g_y=d.getFullYear();
+var g_m=d.getMonth()+1;
+var g_d=d.getDate();
+var week=["يكشنبه","دوشنبه","سه شنبه","چهارشنبه","پنج شنبه","جمعه","شنبه"];
+var week=["یكشنبه","دوشنبه","سه شنبه","چهارشنبه","پنج شنبه","جمعه","شنبه"];
+var week= week[d.getDay()];
+var shamsi=gregorian_to_jalali(g_y,g_m,g_d);
+var sh_month=["-","فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"];
+var sh_month=sh_month[shamsi[1]];
+
+Full.setHours(Full.getHours(Full.setMinutes(Full.getMinutes()+30))+4.30);
 
 let Time = Libs.DateTimeFormat.format(Full, "HH:MM:ss");
 
-Bot.setProperty("DateTime", "*📆تاریخ:" + Weeks_Days + " " +[Days + 1] + " " + Months + " " + Years + " | 🌎فصل:" + Seasons + "\n🕰زمان:" + Time + " به وقت ایران*");
+Bot.setProperty("DateTime", "*📆تاریخ:"+week+" "+shamsi[2]+" "+sh_month+" "+shamsi[0]+" | 🌎فصل:" + Seasons + "\n🕰زمان:" + Time + " به وقت ایران*");

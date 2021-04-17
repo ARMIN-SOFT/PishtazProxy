@@ -17,10 +17,10 @@ action:"typing"})
 
 let UserID = data.user.telegramid;
 
-let Buttons1 = [
+let Buttons = [
 {title: "🔙بازگشت به منوی قبل", command: "بخش پروکسی تلگرام" },
 {title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" },
 ];
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons1, "✅مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") پروکسی جدید با موفقیت ایجاد گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
+Bot.sendInlineKeyboard(Buttons, "✅مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") پروکسی جدید با موفقیت ایجاد گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");

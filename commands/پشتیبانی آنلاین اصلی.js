@@ -31,7 +31,4 @@ let Buttons = [
 ];
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons, "📬کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") تیکت پشتیبانی شما با موفقیت در سیستم ثبت و بررسی خواهد شد.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n‼️کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") هرگونه پاسخ از همین طریق اطلاع رسانی خواهد شد.\n\n📮متن پبامک:" + message + "\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
-
-Bot.runCommand("تاریخ و زمان");
-Bot.sendMessageToChatWithId(Admin, "📬مدیریت گرامی آرمین اسکندری لحظاتی پیش پیامک جدید دریافت گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👤فرستنده:" + FirstName + "\n📜متن پیامک:" + message + "\n➖➖➖➖➖➖➖➖➖➖\n📬پاسخ پیامک:\n/Reply_SMS_Original" + UserID + " ", {parse_mode:"html"});
+Bot.sendInlineKeyboard(Buttons, "📬کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") تیکت پشتیبانی شما با موفقیت در سیستم ثبت و بررسی خواهد شد.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n‼️کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") هرگونه پاسخ از همین طریق اطلاع رسانی خواهد شد.\n\n📮متن پیامک:" + message + "\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");

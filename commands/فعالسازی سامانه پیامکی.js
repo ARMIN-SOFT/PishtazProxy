@@ -13,8 +13,6 @@ Api.sendChatAction({
 chat_id:chat.chatid,
 action:"typing"})
 
-User.setProperty("SMSs", "✅فعال");
-
 var Sex = User.getProperty("Sex");
 
 var FullName = User.getProperty("FullName");
@@ -99,20 +97,66 @@ function Decimal(Money){
 return Money.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
-let Amount = parseFloat("900");
-
+let Amount = parseFloat("400");
 if (Money.value()<Amount){
-
-Bot.runCommand("اعتبار حساب کاربری");
-
 Api.answerCallbackQuery({
 callback_query_id: request.id,
-text: " " + Sex + " " + FullName + "با عرض پوزش اعتبار حساب کاربری شما کافی نمی باشد.",
-show_alert: false
+text: " " + Sex + " " + FullName + " با عرض پوزش اعتبار حساب کاربری شما کافی نمی باشد.",
+show_alert: true
 })
+
+let Payment_Code = data.user.id;
+
+let Url1 = Libs.Webhooks.getUrlFor({
+command: "Payment-Gateway-15000",
+user_id: user.id,
+redirect_to: "https://idpay.ir/pishtazproxy/shop/259001"
+})
+
+let Url2 = Libs.Webhooks.getUrlFor({
+command: "Payment-Gateway-30000",
+user_id: user.id,
+redirect_to: "https://idpay.ir/pishtazproxy/shop/259004"
+})
+
+let Url3 = Libs.Webhooks.getUrlFor({
+command: "Payment-Gateway-45000",
+user_id: user.id,
+redirect_to: "https://idpay.ir/pishtazproxy/shop/259007"
+})
+
+let Url4 = Libs.Webhooks.getUrlFor({
+command: "Payment-Gateway-60000",
+user_id: user.id,
+redirect_to: "https://idpay.ir/pishtazproxy/shop/259010"
+})
+
+let Url5 = Libs.Webhooks.getUrlFor({
+command: "Payment-Gateway",
+user_id: user.id,
+redirect_to: "https://idpay.ir/pishtazproxy"
+})
+
+let Buttons =
+[
+[{title: "💵 ۱۵،۰۰۰ هزار تومان", url: "" + Url1 + "" },{title: "💵 ۳۰،۰۰۰ هزار تومان", url: "" + Url2 + "" }],
+[{title: "💵 ۴۵،۰۰۰ هزار تومان", url: "" + Url3 + "" }, {title: "💵 ۶۰،۰۰۰ هزار تومان", url: "" + Url4 +"" }],
+[{title: "💸افزایش اعتبار دلخواه", url: "" + Url5 + "" }],
+[{title: "🏧انتقال اعتبار", command: "انتقال اعتبار اول" }],
+[{title: "🎁اعتبار روزانه", command: "اعتبار روزانه اول" },{title: "🔖کد هدیه", command: "کد هدیه اول بررسی اول" }],
+[{title: "🔙بازگشت به منوی قبل", command: "پروفایل اطلاعات کاربری" }],
+[{title: "🏠بازگشت به منوی اصلی", command: "داشبورد حساب کاربری" }],
+];
+
+let UserID = data.user.telegramid;
+
+Bot.runCommand("تاریخ و زمان");
+Bot.sendInlineKeyboard(Buttons, "<Sex> [<FullName>](tg://user?id=" + UserID + ") به بخش اعتبار حساب کاربری خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n⚠️نکته:هنگام انجام عملیات پرداختی از شناسه پرداخت استفاده کنید.\n\n🔮شناسه پرداخت:`" + Payment_Code + "`\n\n🌏ارز کنونی:🇮🇷ایران - تومان\n💳اعتبار کنونی:*" + (Decimal(Money.value())) + "* " + (Currency(Money.value())) + "\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
 }
 
 else {
+User.setProperty("SMSs", "✅فعال");
+
 Money.remove(Amount);
 Api.answerCallbackQuery({
 callback_query_id: request.id,
@@ -120,13 +164,13 @@ text: "🔄درخواست شما در حال پردازش می باشد...",
 show_alert: false
 })
 
-let UserID = data.user.telegramid;
-
 let Buttons = [
 {title: "🔙بازگشت به منوی قبل", command: "سامانه پیامکی" },
 {title: "🏠بازگشت به منوی اصلی", command: "داشبورد حساب کاربری" },
 ];
 
+let UserID = data.user.telegramid;
+
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons, "<Sex> [<FullName>](tg://user?id=" + UserID + ") بنا به درخواست شما سامانه پیامکی با موفقیت فعال گردید.\n\n⚠️نکته:از فعالسازی مجدد این سامانه خود داری کنید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🌏ارز کنونی:🇮🇷ایران - تومان\n💳اعتبار کنونی:*" + (Decimal(Money.value())) + "* " + (Currency(Money.value())) + "\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
+Bot.sendInlineKeyboard(Buttons, "<Sex> [<FullName>](tg://user?id=" + UserID + ") بنا به درخواست شما سامانه پیامکی با موفقیت فعال گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🌏ارز کنونی:🇮🇷ایران - تومان\n💳اعتبار کنونی:*" + (Decimal(Money.value())) + "* " + (Currency(Money.value())) + "\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
 }

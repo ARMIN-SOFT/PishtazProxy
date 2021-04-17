@@ -22,7 +22,7 @@ User.setProperty("Username", data.message, "text");
 
 let Text = message; 
 function validateUsername(Username){
-var Form = /[A-Za-z]+$/;
+var Form = /^[a-zA-Z]*$/g;
 
 return Form.test(String(Username).toLowerCase());
 }

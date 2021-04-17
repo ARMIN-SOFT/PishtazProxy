@@ -70,7 +70,4 @@ let Buttons = [
 Bot.runCommand("تاریخ و زمان");
 Bot.sendInlineKeyboard(Buttons, "❌مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") بنا به درخواست شما کد هدیه `" + Gift_Code + "` با موفقیت حذف گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
 
-Bot.runCommand("تاریخ و زمان");
-Bot.sendMessage("🌹سلام کاربرای گرامی وقت بخیر لحظاتی پیش کد هدیه `" + Gift_Code + "` منقضی گردید.\n\n<DateTime>");
-
 Bot.setProperty("Gift_Code", "", false);

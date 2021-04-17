@@ -23,16 +23,13 @@ let Buttons = [
 Bot.runCommand("تاریخ و زمان");
 Bot.sendInlineKeyboard(Buttons, "✅مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") ربات با موفقیت به نسخه جدید بروز رسانی گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🔰اطلاعات بروز رسانی جدید بدین شرح است:\n\n🔄نسخه جدید ربات:<Robot_Version>\n\n<Robot_Changes>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
 
-Bot.runCommand("تاریخ و زمان");
-Bot.sendMessageToAllChats("🌹سلام کاربرای گرامی وقت بخیر ربات با موفقیت بروز رسانی گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🔰اطلاعات بروز رسانی جدید بدین شرح است:\n\n🔄نسخه جدید ربات:<Robot_Version>\n\n<Robot_Changes>\n➖➖➖➖➖➖➖➖➖➖\n📨نظرات و انتقادات خود را با ما در میان بگذارید.\n🆔 @ARMIN_SOFT\n🌐 https://ARMIN-SOFT.IR");
-
 let DateTime = Bot.getProperty("DateTime");
 let Robot_Version = Bot.getProperty("Robot_Version");
 let Robot_Changes = Bot.getProperty("Robot_Changes");
 
 Bot.runCommand("تاریخ و زمان");
 Api.sendPhoto({
-chat_id: "-1001308385324",
+chat_id: user.telegramid,
 photo: "https://i.imgur.com/hsmUEH6.jpg",
 caption: "🌹سلام کاربرای گرامی وقت بخیر ربات با موفقیت بروز رسانی گردید.\n\n" + DateTime + "\n➖➖➖➖➖➖➖➖➖➖\n🔰اطلاعات بروز رسانی جدید بدین شرح است:\n\n🔄نسخه جدید ربات:" + Robot_Version + "\n\n" + Robot_Changes + "\n➖➖➖➖➖➖➖➖➖➖\n📨نظرات و انتقادات خود را با ما در میان بگذارید.\n🆔 @ARMIN_SOFT\n🌐 https://ARMIN-SOFT.IR",
 reply_markup: { inline_keyboard: [

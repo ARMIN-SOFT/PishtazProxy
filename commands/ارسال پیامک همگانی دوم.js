@@ -14,7 +14,6 @@ chat_id:chat.chatid,
 action:"typing"})
 
 let UserID = data.user.telegramid;
-let Message = data.message;
 
 let Buttons = [
 {title: "🔙بازگشت به منوی قبل", command: "بخش ارسال پیامک" },
@@ -22,7 +21,4 @@ let Buttons = [
 ];
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons, "✅مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") پیامک شما به تمامی کاربران با موفقیت ارسال گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n📨متن پیامک:" + Message + "\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
-
-Bot.runCommand("تاریخ و زمان");
-Bot.sendMessageToAllChats("📩آقای/خانم لحظاتی پیش پیامکی از سوی مدیریت دریافت گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n📨متن پیامک:" + Message + " ");
+Bot.sendInlineKeyboard(Buttons, "✅مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") پیامک شما به تمامی کاربران با موفقیت ارسال گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n📨متن پیامک:" + message + "\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
