@@ -9,6 +9,10 @@
   aliases: 
 CMD*/
 
+Api.sendChatAction({
+chat_id:chat.chatid,
+action:"typing"})
+
 Bot.setProperty("Telegram_Messenger_Link", data.message);
 
 let UserID = data.user.telegramid;
@@ -27,16 +31,12 @@ let Telegram_Messenger_Details = Bot.getProperty("Telegram_Messenger_Details");
 
 let Message = " " + Telegram_Messenger_Details + "\n➖➖➖➖➖➖➖➖➖➖\n 🆔 @APK_Telegrams";
 
-var Like_Yes = Libs.ResourcesLib.anotherChatRes("Like_Yes");
-
-var Like_No = Libs.ResourcesLib.anotherChatRes("Like_No");
-
 Api.sendDocument({
 chat_id: "@APK_Telegrams",
 document: Telegram_Messenger_Link,
 caption: Message,
 reply_markup: { inline_keyboard: [
-[{text: "👍 " + Like_Yes.value() + " ", callback_data: 'لایک بله'}, {text: "👎 " + Like_No.value() + " ", callback_data: 'لایک خیر'}],
-[{text: "⛔️عبور از فیلترینگ⛔️", callback_data: '1', url: 'https://t.me/PishtazProxy_BOT?start=user110747'}]
+[{text: "🟢تلگرام مسنجر رسمی است🟢", callback_data: 'تلگرام مسنجر رسمی است'}],
+[{text: "🤖ربات پیشتاز پروکسی", callback_data: '1', url: 'https://t.me/PishtazProxy_BOT?start=user110747'}]
 ]}
 })

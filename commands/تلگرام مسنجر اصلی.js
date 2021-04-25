@@ -1,5 +1,5 @@
 /*CMD
-  command: منوی خدمات ربات
+  command: تلگرام مسنجر اصلی
   help: 
   need_reply: 
   auto_retry_time: 
@@ -15,6 +15,8 @@ action:"typing"})
 
 let FirstName = data.user.first_name;
 let UserID = data.user.telegramid;
+
+let DateTime = Bot.getProperty("DateTime");
 
 function canRun(){
 var last_run_at = User.getProperty("last_run_at");
@@ -55,18 +57,24 @@ message_id : message_id
 
 Api.answerCallbackQuery({
 callback_query_id: request.id,
-text: "🔄منوی خدمات ربات در حال بار گذاری می باشد...",
+text: "🔄تلگرام مسنجر در حال بارگذاری می باشد...",
 show_alert: false
 })
 
-let Buttons = [
-{title: "👤حساب کاربری", command: "حساب کاربری" },
-{title: "👮‍♂درخواست همکاری", command: "درخواست همکاری" },
-{title: "📥دانلود اپلیکیشن", command: "دانلود اپلیکیشن اصلی" },
-{title: "📌تغییرات نسخه", command: "تغییرات نسخه اصلی" },
-{title: "👨‍💻پشتیبانی آنلاین", command: "پشتیبانی آنلاین اصلی" },
-{title: "🤖درباره پیشتاز پروکسی", command: "درباره پیشتاز پروکسی اصلی" },
-];
+let Telegram_Messenger_Link = Bot.getProperty("Telegram_Messenger_Link");
+
+let Telegram_Messenger_Details = Bot.getProperty("Telegram_Messenger_Details");
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons, "🌹کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") به بخش منوی خدمات ربات خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
+var Message = "🌹کاربر گرامی " + FirstName + " به تلگرام مسنجر خوش آمدید.\n\n" + DateTime + "\n➖➖➖➖➖➖➖➖➖➖\n" + Telegram_Messenger_Details + " ";
+
+Api.sendDocument({
+chat_id: user.telegramid,
+document: Telegram_Messenger_Link,
+caption: Message,
+reply_markup: { inline_keyboard: [
+[{text: "🟢تلگرام مسنجر رسمی است🟢", callback_data: 'تلگرام مسنجر رسمی است'}],
+[{text: "🔙بازگشت به منوی قبل" , callback_data: 'رسمی اصلی' }],
+[{text: "🏠بازگشت به منوی اصلی" , callback_data: 'منوی خدمات ربات' }],
+]}
+})

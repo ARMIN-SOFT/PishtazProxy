@@ -64,20 +64,20 @@ var Telegram_Messenger_Details = Bot.getProperty("Telegram_Messenger_Details");
 
 if (Telegram_Messenger_Details == undefined){
 let Buttons1 = [
-[{title: "➕افزودن اپلیکیشن" , command: "افزودن تلگرام مسنجر اول"},{title: "➖حذف اپلیکیشن" , command: "حذف تلگرام مسنجر اول"}],
-[{title: "🔙بازگشت به منوی قبل", command: "بخش اپلیکیشن" }],
-[{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" }],
+{title: "➕افزودن اپلیکیشن" , command: "افزودن تلگرام مسنجر اول"},
+{title: "🔙بازگشت به منوی قبل", command: "بخش رسمی" },
+{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" },
 ];
 
 Bot.runCommand("تاریخ و زمان");
 Bot.sendInlineKeyboard(Buttons1, "🌹مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") به بخش تلگرام مسنجر خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🔰اپلیکیشن تلگرام مسنجر بدین شرح است:\n\n⚠️اپلیکیشنی برای نمایش وجود ندارد.\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
 }
 
-else {
+else{
 let Buttons2 = [
-[{title: "➕افزودن اپلیکیشن" , command: "افزودن تلگرام مسنجر اول"},{title: "➖حذف اپلیکیشن" , command: "حذف تلگرام مسنجر اول"}],
-[{title: "🔙بازگشت به منوی قبل", command: "بخش اپلیکیشن" }],
-[{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" }],
+{title: "➕افزودن اپلیکیشن" , command: "افزودن تلگرام مسنجر اول"},
+{title: "🔙بازگشت به منوی قبل", command: "بخش رسمی" },
+{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" },
 ];
 
 Bot.runCommand("تاریخ و زمان");

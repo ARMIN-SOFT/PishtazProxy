@@ -1,5 +1,5 @@
 /*CMD
-  command: بخش اپلیکیشن
+  command: افزودن تلگرام ایکس مسنجر اول
   help: 
   need_reply: 
   auto_retry_time: 
@@ -12,6 +12,8 @@ CMD*/
 Api.sendChatAction({
 chat_id:chat.chatid,
 action:"typing"})
+
+var Sex = User.getProperty("Sex");
 
 var FullName = User.getProperty("FullName");
 
@@ -54,17 +56,18 @@ message_id : message_id
 
 Api.answerCallbackQuery({
 callback_query_id: request.id,
-text: "🔄بخش اپلیکیشن در حال بار گذاری می باشد...",
+text: "🔄افزودن تلگرام ایکس مسنجر در حال بار گذاری می باشد...",
 show_alert: false
 })
 
 let UserID = data.user.telegramid;
 
 let Buttons = [
-[{title: "🟢رسمی", command: "بخش رسمی" },{title: "🔴غیر رسمی", command: "بخش غیر رسمی" }],
-[{title: "🔙بازگشت به منوی قبل", command: "تنظیمات ربات" }],
-[{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" }],
+{title: "🔙بازگشت به منوی قبل", command: "بخش تلگرام ایکس مسنجر" },
+{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" },
 ];
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons, "🌹مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") به بخش اپلیکیشن خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
+Bot.sendInlineKeyboard(Buttons, "<Sex> [<FullName>](tg://user?id=" + UserID + ") به بخش افزودن تلگرام ایکس مسنجر خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی زیر کلیک کنید.");
+
+Bot.runCommand("افزودن تلگرام ایکس مسنجر دوم");

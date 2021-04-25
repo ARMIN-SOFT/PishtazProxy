@@ -1,5 +1,5 @@
 /*CMD
-  command: گراف مسنجر
+  command: تلگرام ایکس مسنجر حساب کاربری
   help: 
   need_reply: 
   auto_retry_time: 
@@ -58,25 +58,26 @@ message_id : message_id
 
 Api.answerCallbackQuery({
 callback_query_id: request.id,
-text: "🔄گراف مسنجر در حال بارگذاری می باشد...",
+text: "🔄تلگرام ایکس مسنجر در حال بارگذاری می باشد...",
 show_alert: false
 })
 
-let UserID = data.user.Graphid;
+let UserID = data.user.Telegram_Xid;
 
-let Graph_Messenger_Link = Bot.getProperty("Graph_Messenger_Link");
+let Telegram_X_Messenger_Link = Bot.getProperty("Telegram_X_Messenger_Link");
 
-let Graph_Messenger_Details = Bot.getProperty("Graph_Messenger_Details");
+let Telegram_X_Messenger_Details = Bot.getProperty("Telegram_X_Messenger_Details");
 
 Bot.runCommand("تاریخ و زمان");
-var Message = " " + Sex  + " " + FullName + " به بخش گراف مسنجر خوش آمدید.\n\n" + DateTime + "\n➖➖➖➖➖➖➖➖➖➖\n" + Graph_Messenger_Details + " ";
+var Message = " " + Sex  + " " + FullName + " به تلگرام ایکس مسنجر خوش آمدید.\n\n" + DateTime + "\n➖➖➖➖➖➖➖➖➖➖\n" + Telegram_X_Messenger_Details + " ";
 
 Api.sendDocument({
 chat_id: user.telegramid,
-document: Graph_Messenger_Link,
+document: Telegram_X_Messenger_Link,
 caption: Message,
 reply_markup: { inline_keyboard: [
-[{text: "🔙بازگشت به منوی قبل" , callback_data: 'دانلود اپلیکیشن' }],
+[{text: "🟢تلگرام ایکس مسنجر رسمی است🟢", callback_data: 'تلگرام ایکس مسنجر رسمی است'}],
+[{text: "🔙بازگشت به منوی قبل" , callback_data: 'رسمی حساب کاربری' }],
 [{text: "🏠بازگشت به منوی اصلی" , callback_data: 'داشبورد حساب کاربری' }],
 ]}
 })

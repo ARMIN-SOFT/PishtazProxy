@@ -54,9 +54,11 @@ message_id : message_id
 
 Api.answerCallbackQuery({
 callback_query_id: request.id,
-text: "🔄آمار کلی در حال بار گذاری می باشد.. ",
+text: "🔄آمار کلی ربات در حال بار گذاری می باشد.. ",
 show_alert: false
 })
+
+var Statistics_Robot = Bot.getProperty("Total_User", "0")*1
 
 let UserID = data.user.telegramid;
 
@@ -66,4 +68,4 @@ let Buttons = [
 ];
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons, "🌹مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") به بخش آمار کلی خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🔰آمار کلی بدین شرح است:\n\n<Statistics_Robot>\n\n‼️این آمار هر شب ساعت ۰۰:۰۰ بروز می شود.\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
+Bot.sendInlineKeyboard(Buttons, "🌹مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") به بخش آمار کلی ربات خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🔰آمار کلی ربات بدین شرح است:\n\n👥تعداد کل:*" + Statistics_Robot + "* نفر\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");

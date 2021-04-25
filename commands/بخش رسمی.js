@@ -1,5 +1,5 @@
 /*CMD
-  command: بخش ویرایش دستورات
+  command: بخش رسمی
   help: 
   need_reply: 
   auto_retry_time: 
@@ -54,17 +54,17 @@ message_id : message_id
 
 Api.answerCallbackQuery({
 callback_query_id: request.id,
-text: "🔄بخش ویرایش دستورات در حال بار گذاری می باشد...",
+text: "🔄بخش رسمی در حال بار گذاری می باشد...",
 show_alert: false
 })
 
 let UserID = data.user.telegramid;
 
 let Buttons = [
-{title: "✏️ویرایش دستورات", command: "ویرایش دستورات اول" },
-{title: "🔙بازگشت به منوی قبل", command: "تنظیمات ربات" },
-{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" },
+[{title: "🔌تلگرام مسنجر", command: "بخش تلگرام مسنجر" },{title: "🔌تلگرام ایکس مسنجر", command: "بخش تلگرام ایکس مسنجر" }],
+[{title: "🔙بازگشت به منوی قبل", command: "بخش اپلیکیشن" }],
+[{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" }],
 ];
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons, "🌹مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") به بخش ویرایش دستورات خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🔰آمار کلی ربات بدین شرح است:\n\n<Statistics_Robot>\n\n‼️این آمار هر شب ساعت ۰۰:۰۰ بروز می شود.\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
+Bot.sendInlineKeyboard(Buttons, "🌹مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") به بخش رسمی خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");

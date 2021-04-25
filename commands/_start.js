@@ -13,6 +13,21 @@ Api.sendChatAction({
 chat_id:chat.chatid,
 action:"typing"})
 
+if(!User.getProperty("Statistics_Robot")){
+var Admin = "592526230";
+
+Bot.setProperty("Total_User", (Bot.getProperty("Total_User", "0")*1)+1, "text");
+
+let Buttons10 = [
+{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" },
+];
+
+Bot.runCommand("تاریخ و زمان");
+Bot.sendInlineKeyboardToChatWithId(Admin, Buttons10, "✔️مدیریت گرامی [آرمین اسکندری](tg://user?id=592526230) لحظاتی پیش کاربر جدیدی عضو ربات گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🔰اطلاعات عضویت کاربر جدید بدین شرح است:\n\n👤نام:[" + data.user.first_name + "](tg://user?id=" + data.user.telegramid + ")\n♻️نام کاربری:@" + user.username + "\n🆔آیدی عددی:`" + data.user.telegramid + "`\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
+
+User.setProperty("Statistics_Robot", true, "boolean");
+}
+
 let FirstName = data.user.first_name;
 let UserID = data.user.telegramid;
 
@@ -118,7 +133,7 @@ var Button10 = Libs.Random.randomInt(10,100);
 var Button11 = Libs.Random.randomInt(10,100);
 var Button12 = Libs.Random.randomInt(10,100);
 
-var Buttons = [
+var Buttons20 = [
 [{title:Button1, command:'Answer '+Button1}, {title:Button2, command:'Answer '+Button2}, {title:Button3, command:'Answer '+Button3}],
 [{title:Button4, command:'Answer '+Button4}, {title:Button5, command:'Answer '+Button5}, {title:Button6, command:'Answer '+Button6}],
 [{title:Button7, command:'Answer '+Button7}, {title:Button8, command:'Answer '+Button8}, {title:Button9, command:'Answer '+Button9}],
@@ -127,4 +142,4 @@ var Buttons = [
 ]
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons, "❓کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") قبل از استفاده از خدمات ربات پرسش امنیتی زیر را جواب دهید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n📟پرسش امنیتی:\n*" + Question1 + " + " + Question2 + "= ?*\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
+Bot.sendInlineKeyboard(Buttons20, "❓کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") قبل از استفاده از خدمات ربات پرسش امنیتی زیر را جواب دهید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n📟پرسش امنیتی:\n*" + Question1 + " + " + Question2 + "= ?*\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");

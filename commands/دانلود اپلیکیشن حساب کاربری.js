@@ -1,5 +1,5 @@
 /*CMD
-  command: پلاس مسنجر
+  command: دانلود اپلیکیشن حساب کاربری
   help: 
   need_reply: 
   auto_retry_time: 
@@ -16,8 +16,6 @@ action:"typing"})
 var Sex = User.getProperty("Sex");
 
 var FullName = User.getProperty("FullName");
-
-let DateTime = Bot.getProperty("DateTime");
 
 function canRun(){
 var last_run_at = User.getProperty("last_run_at");
@@ -58,25 +56,16 @@ message_id : message_id
 
 Api.answerCallbackQuery({
 callback_query_id: request.id,
-text: "🔄پلاس مسنجر در حال بارگذاری می باشد...",
+text: "🔄دانلود اپلیکیشن در حال بارگذاری می باشد...",
 show_alert: false
 })
 
-let UserID = data.user.Plusid;
+let UserID = data.user.telegramid;
 
-let Plus_Messenger_Link = Bot.getProperty("Plus_Messenger_Link");
-
-let Plus_Messenger_Details = Bot.getProperty("Plus_Messenger_Details");
+let Buttons = [
+[{title: "🟢رسمی", command: "رسمی حساب کاربری" },{title: "🔴غیر رسمی", command: "غیر رسمی حساب کاربری" }],
+[{title: "🏠بازگشت به منوی اصلی", command: "داشبورد حساب کاربری" }],
+];
 
 Bot.runCommand("تاریخ و زمان");
-var Message = " " + Sex  + " " + FullName + " به بخش پلاس مسنجر خوش آمدید.\n\n" + DateTime + "\n➖➖➖➖➖➖➖➖➖➖\n" + Plus_Messenger_Details + " ";
-
-Api.sendDocument({
-chat_id: user.telegramid,
-document: Plus_Messenger_Link,
-caption: Message,
-reply_markup: { inline_keyboard: [
-[{text: "🔙بازگشت به منوی قبل" , callback_data: 'دانلود اپلیکیشن' }],
-[{text: "🏠بازگشت به منوی اصلی" , callback_data: 'داشبورد حساب کاربری' }],
-]}
-})
+Bot.sendInlineKeyboard(Buttons,"<Sex> [<FullName>](tg://user?id=" + UserID + ") به بخش دانلود اپلیکیشن خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");

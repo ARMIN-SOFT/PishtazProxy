@@ -1,5 +1,5 @@
 /*CMD
-  command: داشبورد حساب کاربری
+  command: گراف مسنجر حساب کاربری
   help: 
   need_reply: 
   auto_retry_time: 
@@ -16,6 +16,8 @@ action:"typing"})
 var Sex = User.getProperty("Sex");
 
 var FullName = User.getProperty("FullName");
+
+let DateTime = Bot.getProperty("DateTime");
 
 function canRun(){
 var last_run_at = User.getProperty("last_run_at");
@@ -56,20 +58,26 @@ message_id : message_id
 
 Api.answerCallbackQuery({
 callback_query_id: request.id,
-text: "🔄داشبورد حساب کاربری در حال بار گذاری می باشد...",
+text: "🔄گراف مسنجر در حال بارگذاری می باشد...",
 show_alert: false
 })
 
-let UserID = data.user.telegramid;
+let UserID = data.user.Graphid;
 
-let Buttons = [
-{title: "👤پروفایل کاربری", command: "پروفایل اطلاعات کاربری" },
-{title: "🔧سرویس پروکسی", command: "سرویس پروکسی" },
-{title: "📥دانلود اپلیکیشن", command: "دانلود اپلیکیشن حساب کاربری" },
-{title: "📌تغییرات نسخه", command: "تغییرات نسخه حساب کاربری" },
-{title: "👨‍💻پشتیبانی آنلاین", command: "پشتیبانی آنلاین حساب کاربری" },
-{title: "🤖درباره پیشتاز پروکسی", command: "درباره پیشتاز پروکسی حساب کاربری" },
-];
+let Graph_Messenger_Link = Bot.getProperty("Graph_Messenger_Link");
+
+let Graph_Messenger_Details = Bot.getProperty("Graph_Messenger_Details");
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons, "<Sex> [<FullName>](tg://user?id=" + UserID + ") به بخش داشبورد حساب کاربری خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
+var Message = " " + Sex  + " " + FullName + " به گراف مسنجر خوش آمدید.\n\n" + DateTime + "\n➖➖➖➖➖➖➖➖➖➖\n" + Graph_Messenger_Details + " ";
+
+Api.sendDocument({
+chat_id: user.telegramid,
+document: Graph_Messenger_Link,
+caption: Message,
+reply_markup: { inline_keyboard: [
+[{text: "🔴گراف مسنجر غیر رسمی است🔴", callback_data: 'گراف مسنجر غیر رسمی است'}],
+[{text: "🔙بازگشت به منوی قبل" , callback_data: 'غیر رسمی حساب کاربری' }],
+[{text: "🏠بازگشت به منوی اصلی" , callback_data: 'داشبورد حساب کاربری' }],
+]}
+})

@@ -1,5 +1,5 @@
 /*CMD
-  command: تلگرام مسنجر
+  command: تلگرام مسنجر حساب کاربری
   help: 
   need_reply: 
   auto_retry_time: 
@@ -69,14 +69,15 @@ let Telegram_Messenger_Link = Bot.getProperty("Telegram_Messenger_Link");
 let Telegram_Messenger_Details = Bot.getProperty("Telegram_Messenger_Details");
 
 Bot.runCommand("تاریخ و زمان");
-var Message = " " + Sex  + " " + FullName + " به بخش تلگرام مسنجر خوش آمدید.\n\n" + DateTime + "\n➖➖➖➖➖➖➖➖➖➖\n" + Telegram_Messenger_Details + " ";
+var Message = " " + Sex  + " " + FullName + " به تلگرام مسنجر خوش آمدید.\n\n" + DateTime + "\n➖➖➖➖➖➖➖➖➖➖\n" + Telegram_Messenger_Details + " ";
 
 Api.sendDocument({
 chat_id: user.telegramid,
 document: Telegram_Messenger_Link,
 caption: Message,
 reply_markup: { inline_keyboard: [
-[{text: "🔙بازگشت به منوی قبل" , callback_data: 'دانلود اپلیکیشن' }],
+[{text: "🟢تلگرام مسنجر رسمی است🟢", callback_data: 'تلگرام مسنجر رسمی است'}],
+[{text: "🔙بازگشت به منوی قبل" , callback_data: 'رسمی حساب کاربری' }],
 [{text: "🏠بازگشت به منوی اصلی" , callback_data: 'داشبورد حساب کاربری' }],
 ]}
 })

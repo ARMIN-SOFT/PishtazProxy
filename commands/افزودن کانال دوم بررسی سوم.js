@@ -19,21 +19,10 @@ let DateTime = Bot.getProperty("DateTime");
 
 Bot.editMessage("✔️فرمت نام کاربری کانال وارد شده صحیح می باشد.", Edit);
 
-let Validation = Libs.Random.randomInt(1,1000000);
+var Channel_Events = User.getProperty("Channel_Events");
 
-let Channel_Events = User.getProperty("Channel_Events");
-
-Bot.runCommand("تاریخ و زمان");
-Bot.sendMessage("📮کد تایید اعتبار سنجی درصورت ادمین بودن ربات در کانال " + Channel_Events + " با موفقیت ارسال گردید.\n\n<DateTime>");
-
-User.setProperty("Validation", Validation, "Integer");
-
-Bot.runCommand("تاریخ و زمان");
-var Message = "✔️کد تایید اعتبار سنجی کانال وقایع دریافت گردید.\n\n" + DateTime + "\n➖➖➖➖➖➖➖➖➖➖\n🔒کد تایید اعتبار سنجی:`" + Validation + "`";
-
-Api.sendMessage({ 
-chat_id: Channel_Events, 
-text: Message, 
-parse_mode: "Markdown"})
-
-Bot.runCommand("افزودن کانال سوم بررسی اول");
+Api.getChatMember({
+chat_id: Channel_Events,
+user_id: "1231290973",
+on_result: "افزودن کانال دوم بررسی ششم"
+})

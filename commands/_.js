@@ -9,36 +9,29 @@
   aliases: 
 CMD*/
 
-var valid = message.indexOf("/Reply_SMS_Account") + 1
-if (!valid){
+Api.sendChatAction({
+chat_id:chat.chatid,
+action:"typing"})
+
+let FirstName = data.user.first_name;
+let UserID = data.user.telegramid;
+
+let FullName = User.getProperty("FullName");
+
+if (FullName == undefined){
+let Buttons1 = [
+{title: "👨‍💻پشتیبانی آنلاین", command: "پشتیبانی آنلاین اصلی" },
+{title: "🏠بازگشت به منوی اصلی", command: "منوی خدمات ربات" },
+];
+
+Bot.sendInlineKeyboard(Buttons1, "❌کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") با عرض پوزش عبارت وارد شده معتبر نمی باشد.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n📝عبارت وارد شده:*" + message + "*\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
 }
 
-else {
-var tgid = message.split("/Reply_SMS_Account")[1]
-if (!tgid){
-}
+else{
+let Buttons2 = [
+{title: "👨‍💻پشتیبانی آنلاین", command: "پشتیبانی آنلاین حساب کاربری" },
+{title: "🏠بازگشت به منوی اصلی", command: "داشبورد حساب کاربری" },
+];
 
-else {
-Bot.run({
-command: "پاسخ پیامک حساب کاربری",
-options: { tgid: tgid} 
-})
-}
-}
-
-var valid2 = message.indexOf("/Reply_SMS_Original") + 1
-if (!valid2){
-}
-
-else {
-var tgid2 = message.split("/Reply_SMS_Original")[1]
-if (!tgid2){
-}
-
-else {
-Bot.run({
-command: "پاسخ پیامک اصلی",
-options: { tgid: tgid2} 
-})
-}
+Bot.sendInlineKeyboard(Buttons2, "<Sex> [<FullName>](tg://user?id=" + UserID + ") با عرض پوزش عبارت وارد شده معتبر نمی باشد.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n📝عبارت وارد شده:*" + message + "*\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
 }

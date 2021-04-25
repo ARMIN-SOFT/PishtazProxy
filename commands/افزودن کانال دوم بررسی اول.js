@@ -23,7 +23,7 @@ let Channel_Events = message;
 User.setProperty("Channel_Events", data.message, "text");
 
 function validateUsername(Username){
-var Form = /^[@a-z@A-Z]*$/g;
+var Form = /^[a-zA-Z0-9_@]*$/
 
 return Form.test(String(Username).toLowerCase());
 }

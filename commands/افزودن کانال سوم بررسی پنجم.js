@@ -16,5 +16,3 @@ action:"typing"})
 var Edit = User.getProperty("msgid")
 
 Bot.editMessage("❌کد تایید اعتبار سنجی وارد شده صحیح نمی باشد.", Edit);
-
-Bot.runCommand("افزودن کانال سوم بررسی اول");

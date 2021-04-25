@@ -1,5 +1,5 @@
 /*CMD
-  command: اسکریپت
+  command: اسکریپت اول
   help: 
   need_reply: 
   auto_retry_time: 
