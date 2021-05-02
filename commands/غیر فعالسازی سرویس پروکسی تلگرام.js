@@ -13,7 +13,7 @@ Api.sendChatAction({
 chat_id:chat.chatid,
 action:"typing"})
 
-User.setProperty("Services", "❌غیر فعال");
+User.setProperty("Services", "", false);
 
 var Sex = User.getProperty("Sex");
 

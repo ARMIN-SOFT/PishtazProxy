@@ -22,7 +22,7 @@ User.setProperty("Password", data.message);
 
 let Text = message; 
 function validatePassword(Password){
-var Form = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,15}$/;
+var Form = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,30}$/;
 
 return Form.test(String(Password).toLowerCase());
 }

@@ -9,6 +9,7 @@
   aliases: 
 CMD*/
 
+//Command 1
 function gregorian_to_jalali(gy, gm, gd) {
 var g_d_m, jy, jm, jd, gy2, days;
 var g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];

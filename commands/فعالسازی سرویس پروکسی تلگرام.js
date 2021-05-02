@@ -13,6 +13,8 @@ Api.sendChatAction({
 chat_id:chat.chatid,
 action:"typing"})
 
+User.setProperty("Services", "✅فعال");
+
 var Sex = User.getProperty("Sex");
 
 var FullName = User.getProperty("FullName");
@@ -97,7 +99,7 @@ function Decimal(Money){
 return Money.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
-let Amount = parseFloat("500");
+let Amount = parseFloat("45000");
 if (Money.value()<Amount){
 Api.answerCallbackQuery({
 callback_query_id: request.id,
@@ -137,7 +139,7 @@ user_id: user.id,
 redirect_to: "https://idpay.ir/pishtazproxy"
 })
 
-let Buttons =
+let Buttons1 =
 [
 [{title: "💵 ۱۵،۰۰۰ هزار تومان", url: "" + Url1 + "" },{title: "💵 ۳۰،۰۰۰ هزار تومان", url: "" + Url2 + "" }],
 [{title: "💵 ۴۵،۰۰۰ هزار تومان", url: "" + Url3 + "" }, {title: "💵 ۶۰،۰۰۰ هزار تومان", url: "" + Url4 +"" }],
@@ -151,12 +153,10 @@ let Buttons =
 let UserID = data.user.telegramid;
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons, "<Sex> [<FullName>](tg://user?id=" + UserID + ") به بخش اعتبار حساب کاربری خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n⚠️نکته:هنگام انجام عملیات پرداختی از شناسه پرداخت استفاده کنید.\n\n🔮شناسه پرداخت:`" + Payment_Code + "`\n\n🌏ارز کنونی:🇮🇷ایران - تومان\n💳اعتبار کنونی:*" + (Decimal(Money.value())) + "* " + (Currency(Money.value())) + "\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
+Bot.sendInlineKeyboard(Buttons1, "<Sex> [<FullName>](tg://user?id=" + UserID + ") به بخش اعتبار حساب کاربری خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n⚠️نکته:هنگام انجام عملیات پرداختی از شناسه پرداخت استفاده کنید.\n\n🔮شناسه پرداخت:`" + Payment_Code + "`\n\n🌏ارز کنونی:🇮🇷ایران - تومان\n💳اعتبار کنونی:*" + (Decimal(Money.value())) + "* " + (Currency(Money.value())) + "\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
 }
 
 else {
-User.setProperty("Services", "✅فعال");
-
 Money.remove(Amount);
 Api.answerCallbackQuery({
 callback_query_id: request.id,
@@ -164,7 +164,7 @@ text: "🔄درخواست شما در حال پردازش می باشد...",
 show_alert: false
 })
 
-let Buttons = [
+let Buttons2 = [
 {title: "🔙بازگشت به منوی قبل", command: "پروکسی تلگرام" },
 {title: "🏠بازگشت به منوی اصلی", command: "داشبورد حساب کاربری" },
 ];
@@ -172,5 +172,15 @@ let Buttons = [
 let UserID = data.user.telegramid;
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons, "<Sex> [<FullName>](tg://user?id=" + UserID + ") بنا به درخواست شما سرویس پروکسی تلگرام با موفقیت فعال گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🌏ارز کنونی:🇮🇷ایران - تومان\n💳اعتبار کنونی:*" + (Decimal(Money.value())) + "* " + (Currency(Money.value())) + "\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
+Bot.sendInlineKeyboard(Buttons2, "<Sex> [<FullName>](tg://user?id=" + UserID + ") بنا به درخواست شما سرویس پروکسی تلگرام با موفقیت فعال گردید.\n\n⚠️نکته:پروکسی تلگرام دقایقی دیگر برای شما ارسال می گردد.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🌏ارز کنونی:🇮🇷ایران - تومان\n💳اعتبار کنونی:*" + (Decimal(Money.value())) + "* " + (Currency(Money.value())) + "\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
+
+let Admin = 592526230;
+
+let Buttons3 = [
+{title: "➕افزودن پروکسی تلگرام", command: "افزودن پروکسی تلگرام اول" },
+{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" },
+];
+
+Bot.runCommand("تاریخ و زمان");
+Bot.sendInlineKeyboardToChatWithId(Admin, Buttons3, "✔️مدیریت گرامی [آرمین اسکندری](tg://user?id=592526230) لحظاتی پیش درخواست پروکسی تلگرام  جدیدی در سیستم ثبت گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n`" + FullName + "` *-* `" + UserID + "`\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
 }

@@ -26,7 +26,7 @@ let Buttons1 = [
 ];
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboard(Buttons1, "✅مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") عدم تایید هویت کاربر [" + Identity_Non + "](tg://user?id=" + Identity_Non + ") با موفقیت انجام شد.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
+Bot.sendInlineKeyboard(Buttons1, "✅مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") عدم تایید هویت کاربر [" + FullName_Identity_Non + "](tg://user?id=" + Identity_Non + ") با موفقیت انجام شد.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
 
 let Buttons2 = [
 {title: "📝ایجاد حساب", command: "ایجاد حساب" },

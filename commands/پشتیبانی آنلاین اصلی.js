@@ -39,4 +39,4 @@ let Buttons2 = [
 ];
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboardToChatWithId(Admin, Buttons2, "📬مدیریت گرامی آرمین اسکندری لحظاتی پیش پیامک جدید دریافت گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👤فرستنده:" + FirstName + "\n📜متن پیامک:" + message + "\n`" + FirstName + "` *-* `" + UserID + "`\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
+Bot.sendInlineKeyboardToChatWithId(Admin, Buttons2, "📬مدیریت گرامی آرمین اسکندری لحظاتی پیش پیامک جدید دریافت گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👤فرستنده:*" + FirstName + "*\n📜متن پیامک:*" + message + "*\n`" + FirstName + "` *-* `" + UserID + "`\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");

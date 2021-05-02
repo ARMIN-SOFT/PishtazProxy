@@ -30,4 +30,4 @@ let Buttons = [
 ];
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboardToChatWithId(Admin, Buttons, "✔️مدیریت گرامی [آرمین اسکندری](tg://user?id=592526230) لحظاتی پیش اطلاعات جدیدی در سیستم ثبت گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👤نام و نام خانوادگی:<FullName>\n♻️نام کاربری:*<Username>*\n🔒گذرواژه:*<Password>*\n📞شماره موبایل:<PhoneNumber>\n📧آدرس ایمیل:\n<EmailAddress>\n`" + FirstName2 + "` *-* `" + UserID + "`\n➖➖➖➖➖➖➖➖➖➖\n⁉️مدیریت گرامی آیا اطلاعات فوق را تایید می کنید.");
+Bot.sendInlineKeyboardToChatWithId(Admin, Buttons, "✔️مدیریت گرامی [آرمین اسکندری](tg://user?id=592526230) لحظاتی پیش اطلاعات جدیدی در سیستم ثبت گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n`👤نام و نام خانوادگی:<FullName>\n♻️نام کاربری:<Username>\n🔒گذرواژه:<Password>\n📞شماره موبایل:<PhoneNumber>\n📧آدرس ایمیل:\n<EmailAddress>\n``" + FirstName2 + "` *-* `" + UserID + "`\n➖➖➖➖➖➖➖➖➖➖\n⁉️مدیریت گرامی آیا اطلاعات فوق را تایید می کنید.");

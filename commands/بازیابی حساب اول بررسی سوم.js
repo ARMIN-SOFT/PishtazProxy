@@ -50,4 +50,4 @@ let Buttons2 = [
 ]
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboardToChatWithId(Admin, Buttons2, "✔️مدیریت گرامی [آرمین اسکندری](tg://user?id=592526230) لحظاتی پیش اطلاعات بازیابی کاربر [<FullName>](tg://user?id=" + UserID + ") از طریق سامانه پیامکی دریافت گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👤نام و نام خانوادگی:<FullName>\n♻️نام کاربری:*<Username>*\n🔒گذرواژه:*<Password>*\n📞شماره موبایل:<PhoneNumber>\n📧آدرس ایمیل:\n<EmailAddress>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
+Bot.sendInlineKeyboardToChatWithId(Admin, Buttons2, "✔️مدیریت گرامی [آرمین اسکندری](tg://user?id=592526230) لحظاتی پیش اطلاعات بازیابی کاربر [<FullName>](tg://user?id=" + UserID + ") از طریق سامانه پیامکی دریافت گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n`👤نام و نام خانوادگی:<FullName>\n♻️نام کاربری:*<Username>*\n🔒گذرواژه:*<Password>*\n📞شماره موبایل:<PhoneNumber>\n📧آدرس ایمیل:\n<EmailAddress>`\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");

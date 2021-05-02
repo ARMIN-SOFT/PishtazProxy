@@ -11,6 +11,8 @@ CMD*/
 
 let UserID = data.user.telegramid;
 
+let FullName = User.getProperty("FullName");
+
 let Buttons1 =
 [
 {title: "🏠بازگشت به منوی اصلی", command: "داشبورد حساب کاربری" },
@@ -28,4 +30,4 @@ let Buttons2 = [
 ]
 
 Bot.runCommand("تاریخ و زمان");
-Bot.sendInlineKeyboardToChatWithId(Admin, Buttons2, "✔️مدیریت گرامی [آرمین اسکندری](tg://user?id=592526230) لحظاتی پیش کاربر [<FullName>](tg://user?id=" + UserID + ") جهت شارژ اعتبار به مبلغ ۴۵،۰۰۰ تومان وارد درگاه پرداخت آیدی پی گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🔮شناسه پرداخت:`" + Payment_Code + "`\n🆔آیدی عددی:`" + UserID + "`\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
+Bot.sendInlineKeyboardToChatWithId(Admin, Buttons2, "✔️مدیریت گرامی [آرمین اسکندری](tg://user?id=592526230) لحظاتی پیش کاربر [<FullName>](tg://user?id=" + UserID + ") جهت شارژ اعتبار به مبلغ ۴۵،۰۰۰ تومان وارد درگاه پرداخت آیدی پی گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🔮شناسه پرداخت:`" + Payment_Code + "`\n`" + FullName + "` *-* `" + UserID + "`\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");

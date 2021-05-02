@@ -16,4 +16,4 @@ let Service = new Array("سرور آمبرلا", "سرور آمازون", "سر�
 let Random1 = Math.floor(Location.length* Math.random());
 let Random2 = Math.floor(Service.length* Math.random());
 
-Bot.setProperty("ProxyService", "📍موقعیت:" + Location[Random1] + "\n🔧سرویس دهنده:" + Service[Random2] + " ");
+Bot.setProperty("Proxy_Service", "📍موقعیت:" + Location[Random1] + "\n🔧سرویس دهنده:" + Service[Random2] + " ");
