@@ -14,7 +14,6 @@ chat_id:chat.chatid,
 action:"typing"})
 
 var Sex = User.getProperty("Sex");
-
 var FullName = User.getProperty("FullName");
 
 function canRun(){

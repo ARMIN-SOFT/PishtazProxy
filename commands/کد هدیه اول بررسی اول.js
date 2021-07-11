@@ -14,9 +14,7 @@ chat_id:chat.chatid,
 action:"typing"})
 
 var Sex = User.getProperty("Sex");
-
 var FullName = User.getProperty("FullName");
-
 var Gift_Code = User.getProperty("Gift_Code");
 
 function canRun(){
@@ -68,7 +66,7 @@ let Buttons = [
 {title: "🏠بازگشت به منوی اصلی", command: "داشبورد حساب کاربری" },
 ];
 
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 Bot.sendInlineKeyboard(Buttons, "<Sex> [<FullName>](tg://user?id=" + UserID + ") به بخش کد هدیه خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی زیر کلیک کنید.");
 
 Bot.runCommand("کد هدیه اول بررسی دوم");

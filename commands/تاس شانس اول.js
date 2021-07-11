@@ -9,8 +9,7 @@
   aliases: 
 CMD*/
 
-let String = Libs.Random.randomInt(500,3000);
-
+let String = Libs.Random.randomInt(1000,3000);
 let Dice_Luck = String;
 
 Bot.setProperty("Dice_Luck", Dice_Luck, "Integer");

@@ -17,7 +17,6 @@ let FirstName = data.user.first_name;
 let UserID = data.user.telegramid;
 
 let Sex = User.getProperty("Sex");
-
 let FullName = User.getProperty("FullName");
 
 if (FullName == undefined){

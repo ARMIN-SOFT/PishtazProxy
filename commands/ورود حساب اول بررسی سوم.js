@@ -1,7 +1,7 @@
 /*CMD
   command: ورود حساب اول بررسی سوم
   help: 
-  need_reply: 
+  need_reply: false
   auto_retry_time: 
   folder: 
   answer: 
@@ -15,6 +15,14 @@ action:"typing"})
 
 var Edit = User.getProperty("msgid")
 
-Bot.editMessage("✔️نام کاربری وارد شده صحیح می باشد.", Edit);
+Bot.editMessage("✅اطلاعات کاربری در دیتابیس ثبت گردیده است.", Edit);
 
-Bot.runCommand("ورود حساب دوم بررسی اول");
+let UserID = data.user.telegramid;
+
+Bot.sendMessage("🔄ربات در حال ورود به حساب کاربری [<FullName>](tg://user?id=" + UserID + ") می باشد...");
+let Buttons = [
+{title: "🗄داشبورد حساب کاربری", command: "داشبورد حساب کاربری" },
+];
+
+Bot.runCommand("پیکربندی");
+Bot.sendInlineKeyboard(Buttons, "<Sex> [<FullName>](tg://user?id=" + UserID + ") به حساب کاربری خود خوش آمدید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");

@@ -17,4 +17,4 @@ var Edit = User.getProperty("msgid")
 
 Bot.editMessage("✔️فرمت نام و نام خانوادگی وارد شده صحیح می باشد.", Edit);
 
-Bot.runCommand("پرسش سوم بررسی اول");
+Bot.runCommand("تایید اطلاعات اول");

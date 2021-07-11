@@ -13,22 +13,20 @@ Api.sendChatAction({
 chat_id:chat.chatid,
 action:"typing"})
 
-Bot.setProperty("Telegram_Messenger_Link", data.message);
-
 let UserID = data.user.telegramid;
+
+Bot.setProperty("Telegram_Messenger_Link", data.message);
 
 let Buttons = [
 {title: "🔙بازگشت به منوی قبل", command: "بخش تلگرام مسنجر" },
-{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" },
+{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت" },
 ];
 
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 Bot.sendInlineKeyboard(Buttons, "✅مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") اپلیکیشن تلگرام مسنجر با موفقیت ایجاد گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
 
 let Telegram_Messenger_Link = Bot.getProperty("Telegram_Messenger_Link");
-
 let Telegram_Messenger_Details = Bot.getProperty("Telegram_Messenger_Details");
-
 let Message = " " + Telegram_Messenger_Details + "\n➖➖➖➖➖➖➖➖➖➖\n 🆔 @APK_Telegrams";
 
 Api.sendDocument({

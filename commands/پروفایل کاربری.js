@@ -14,13 +14,10 @@ chat_id:chat.chatid,
 action:"typing"})
 
 let Robot_Version = Bot.getProperty("Robot_Version");
-
 let Robot_Changes = Bot.getProperty("Robot_Changes");
-
 let DateTime = Bot.getProperty("DateTime");
 
-Bot.runCommand("تاریخ و زمان");
-
+Bot.runCommand("پیکربندی");
 let Photos = options.result.photos;
 for(let User in Photos)
 

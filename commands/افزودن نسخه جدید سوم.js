@@ -14,12 +14,10 @@ chat_id:chat.chatid,
 action:"typing"})
 
 let DateTime = Bot.getProperty("DateTime");
-
 let Robot_Version = Bot.getProperty("Robot_Version");
-
 let Robot_Changes = Bot.getProperty("Robot_Changes");
 
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 Api.sendPhoto({
 chat_id: "592526230",
 photo: "https://i.imgur.com/hsmUEH6.jpg",

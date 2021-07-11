@@ -1,7 +1,7 @@
 /*CMD
   command: ورود حساب اول بررسی دوم
   help: 
-  need_reply: 
+  need_reply: false
   auto_retry_time: 
   folder: 
   answer: 

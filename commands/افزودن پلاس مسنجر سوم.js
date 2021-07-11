@@ -19,16 +19,14 @@ let UserID = data.user.Plusid;
 
 let Buttons = [
 {title: "🔙بازگشت به منوی قبل", command: "بخش پلاس مسنجر" },
-{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" },
+{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت" },
 ];
 
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 Bot.sendInlineKeyboard(Buttons, "✅مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") اپلیکیشن پلاس مسنجر با موفقیت ایجاد گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
 
 let Plus_Messenger_Link = Bot.getProperty("Plus_Messenger_Link");
-
 let Plus_Messenger_Details = Bot.getProperty("Plus_Messenger_Details");
-
 let Message = " " + Plus_Messenger_Details + "\n➖➖➖➖➖➖➖➖➖➖\n 🆔 @APK_Telegrams";
 
 Api.sendDocument({

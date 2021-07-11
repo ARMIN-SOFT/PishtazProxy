@@ -16,7 +16,6 @@ action:"typing"})
 let UserID = data.user.telegramid;
 
 let Transfer_Credit_UserID = User.getProperty("Transfer_Credit_UserID");
-
 let Transfer_Credit_Amount = User.getProperty("Transfer_Credit_Amount");
 
 let Item = parseFloat(Transfer_Credit_Amount);
@@ -69,5 +68,5 @@ let Buttons = [
 ];
 
 Money.add(Item);
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 Bot.sendInlineKeyboardToChatWithId(Transfer_Credit_UserID, Buttons, "🎁آقای/خانم تبریک لحظاتی پیش میزان [" + (Decimal(Item)) + "](tg://user?id=" + Transfer_Credit_UserID + ") تومان اعتبار حساب کاربری شما توسط کاربر [<FullName>](tg://user?id=" + UserID + ") شارژ گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🌏ارز کنونی:🇮🇷ایران - تومان\n💳اعتبار کنونی:*" + (Decimal(Money.value())) + "* " + (Currency(Money.value())) + "\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");

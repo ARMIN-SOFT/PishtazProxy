@@ -19,10 +19,10 @@ Bot.setProperty("Robot_Changes", message)
 
 let Buttons = [
 {title: "🔙بازگشت به منوی قبل", command: "بخش بروز رسانی" },
-{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" },
+{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت" },
 ];
 
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 Bot.sendInlineKeyboard(Buttons, "✅مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") ربات با موفقیت به نسخه جدید بروز رسانی گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🔰اطلاعات بروز رسانی جدید بدین شرح است:\n\n🔄نسخه جدید ربات:<Robot_Version>\n\n<Robot_Changes>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
 
 Bot.runAll({

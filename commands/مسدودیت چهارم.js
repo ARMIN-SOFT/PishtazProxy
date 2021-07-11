@@ -18,22 +18,20 @@ action:"typing"})
 let UserID = data.user.telegramid;
 
 let Crimes_UserID = User.getProperty("Crimes_UserID");
-
 let Crimes_FullName = User.getProperty("Crimes_FullName");
-
 let Crimes_Mass = User.getProperty("Crimes_Mass");
 
 let Buttons1 = [
 {title: "🔙بازگشت به منوی قبل", command: "بخش جرایم" },
-{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" },
+{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت" },
 ];
 
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 Bot.sendInlineKeyboard(Buttons1, "✅مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") حساب کاربری کاربر [" + Crimes_FullName + "](tg://user?id=" + Crimes_UserID + ") به علت [" + Crimes_Mass + "](tg://user?id=" + Crimes_UserID + ") با موفقیت مسدود گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
 
 let Buttons2 = [
 {title: "🏠بازگشت به منوی اصلی", command: "داشبورد حساب کاربری" },
 ];
 
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 Bot.sendInlineKeyboardToChatWithId(Crimes_UserID, Buttons2, "⛔️آقای/خانم [" + Crimes_FullName + "](tg://user?id=" + Crimes_UserID + ") لحظاتی پیش حساب کاربری شما توسط مدیریت به علت [" + Crimes_Mass + "](tg://user?id=" + Crimes_UserID + ") مسدود گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");

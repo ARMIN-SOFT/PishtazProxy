@@ -14,6 +14,6 @@ let msg_id = options.result.message_id;
 User.setProperty("msgid" ,msg_id, "integer");
 
 Bot.run({
-command: "ورود حساب اول بررسی پنجم",
+command: "دستی دوم بررسی پنجم",
 run_after: 10
 })

@@ -22,7 +22,7 @@ let Buttons10 = [
 {title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" },
 ];
 
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 Bot.sendInlineKeyboardToChatWithId(Admin, Buttons10, "✔️مدیریت گرامی [آرمین اسکندری](tg://user?id=592526230) لحظاتی پیش کاربر جدیدی عضو ربات گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🔰اطلاعات عضویت کاربر جدید بدین شرح است:\n\n👤نام:[" + data.user.first_name + "](tg://user?id=" + data.user.telegramid + ")\n♻️نام کاربری:@" + user.username + "\n🆔آیدی عددی:`" + data.user.telegramid + "`\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
 
 User.setProperty("Statistics_Robot", true, "boolean");
@@ -31,7 +31,7 @@ User.setProperty("Statistics_Robot", true, "boolean");
 let FirstName = data.user.first_name;
 let UserID = data.user.telegramid;
 
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 function doAlreadyAttracted(){
 Bot.sendMessage("<Sex> [<FullName>](tg://user?id=" + UserID + ") شما نمی توانید از لینک مجموعه گیری خود استفاده کنید.\n\n<DateTime>");
 }
@@ -85,11 +85,11 @@ Money.add(400);
 Bot.sendMessage("🎁کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") شما ۴۰۰ تومان اعتبار بدلیل عضویت شما به ربات دریافت نمودید.\n➖➖➖➖➖➖➖➖➖➖\n🎎همچنین شما از طریق لینک معرف [" + refUser.first_name + "](tg://user?id=" + refUser.telegramid + ") عضویت خود را انجام دادید.\n\n<DateTime>");
 
 Money.add(600);
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 Bot.sendMessageToChatWithId(refUser.chatId, "🌹کاربر گرامی [" + refUser.first_name + "](tg://user?id=" + refUser.telegramid + ") تبریک شما ۶۰۰ تومان اعتبار بابت عضویت کاربر [" + FirstName + "](tg://user?id=" + UserID + ") به ربات دریافت نمودید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n🌏ارز کنونی:🇮🇷ایران - تومان\n💳اعتبار کنونی:*" + (Decimal(Money.value())) + "* " + (Currency(Money.value())) + " ");
 }
 
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 function doTouchOwnLink(){
 Bot.sendMessage("⚠️کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") شما قبلا یک بار عضویت خود را انجام داده اید.\n\n<DateTime>");
 }
@@ -113,9 +113,7 @@ message_id : message_id
 }
 
 let Question1 = Libs.Random.randomInt(10,100);
-
 let Question2 = Libs.Random.randomInt(10,100);
-
 let Answer = Question1+Question2;
 
 User.setProperty('Answer',Answer,'string')
@@ -141,5 +139,5 @@ var Buttons20 = [
 [{title:'🔄تغیر پرسش امنیتی', command:'/start'}],
 ]
 
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 Bot.sendInlineKeyboard(Buttons20, "❓کاربر گرامی [" + FirstName + "](tg://user?id=" + UserID + ") قبل از استفاده از خدمات ربات پرسش امنیتی زیر را جواب دهید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n📟پرسش امنیتی:\n*" + Question1 + " + " + Question2 + "= ?*\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");

@@ -63,8 +63,8 @@ return Credit_Amount.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 
 let Buttons = [
 {title: "🔙بازگشت به منوی قبل", command: "بخش کد هدیه" },
-{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت دوم" },
+{title: "🏠بازگشت به منوی مدیریت", command: "مدیریت" },
 ];
 
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 Bot.sendInlineKeyboard(Buttons, "✅مدیریت گرامی [<FullName>](tg://user?id=" + UserID + ") کد هدیه جدید با موفقیت ایجاد گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");

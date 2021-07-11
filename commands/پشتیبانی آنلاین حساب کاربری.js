@@ -26,7 +26,7 @@ let Buttons1 = [
 {title: "🏠بازگشت به منوی اصلی", command: "داشبورد حساب کاربری" },
 ];
 
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 Bot.sendInlineKeyboard(Buttons1, "<Sex> [<FullName>](tg://user?id=" + UserID + ") تیکت پشتیبانی شما با موفقیت در سیستم ثبت و بررسی خواهد شد.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n<Sex> [<FullName>](tg://user?id=" + UserID + ") هرگونه پاسخ از همین طریق اطلاع رسانی خواهد شد.\n\n📮متن پیامک:" + message + "\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات ربات بر روی منوی مورد نظر کلیک کنید.");
 
 let Buttons2 = [
@@ -36,5 +36,5 @@ let Buttons2 = [
 
 let FullName = User.getProperty("FullName");
 
-Bot.runCommand("تاریخ و زمان");
+Bot.runCommand("پیکربندی");
 Bot.sendInlineKeyboardToChatWithId(Admin, Buttons2, "📬مدیریت گرامی آرمین اسکندری لحظاتی پیش پیامک جدید دریافت گردید.\n\n<DateTime>\n➖➖➖➖➖➖➖➖➖➖\n👤فرستنده:" + FullName + "\n📜متن پیامک:" + message + "\n`" + FullName + "` *-* `" + UserID + "`\n➖➖➖➖➖➖➖➖➖➖\n👌جهت استفاده از امکانات مدیریت بر روی منوی مورد نظر کلیک کنید.");
